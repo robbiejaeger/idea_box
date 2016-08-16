@@ -17,4 +17,21 @@ describe "Ideas API Controller" do
     expect(parsed_response["ideas"][1]["title"]).to eq("Idea2")
     expect(parsed_response["ideas"][1]["body"]).to eq("Idea2 body.")
   end
+
+  it "can create a new idea" do
+    idea1 = Idea.create(title: "Idea1", body: "Idea1 body.")
+
+    post '/ideas', params: {idea: {title: "New Idea!", body: "New body!"}}
+    expect(response.status).to eq(204)
+
+    get '/ideas'
+    parsed_response = JSON.parse(response.body)
+    
+    expect(parsed_response["ideas"].length).to eq(2)
+    expect(parsed_response["ideas"][0]["title"]).to eq("Idea1")
+    expect(parsed_response["ideas"][0]["body"]).to eq("Idea1 body.")
+
+    expect(parsed_response["ideas"][1]["title"]).to eq("New Idea!")
+    expect(parsed_response["ideas"][1]["body"]).to eq("New body!")
+  end
 end
