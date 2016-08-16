@@ -5,9 +5,19 @@ $(document).ready(function() {
       dataType: "JSON"
   }).done(function(allIdeas){
     $.each(allIdeas.ideas, function(i, idea) {
+      var body = idea.body;
+      if (body.length > 100){
+        var maxLength = 100;
+
+        var trimmedBody = body.substr(0, maxLength);
+        trimmedBody = trimmedBody.substr(0, Math.min(trimmedBody.length, trimmedBody.lastIndexOf(" ")));
+      } else {
+        var trimmedBody = body;
+      }
+
       $('#ideas-table').append('<tr>' +
                         '<td>' + idea.title + '</td>' +
-                        '<td>' + idea.body + '</td>' +
+                        '<td>' + trimmedBody + '</td>' +
                         '<td>' + idea.quality + '</td>' +
                         '</tr>');
     });
