@@ -6,16 +6,7 @@ $(document).ready(function() {
 
     if (ideaQuality < (qualities.length - 1)) {
       var newQuality = ideaQuality + 1;
-
-      $.ajax({
-        url: '/ideas/' + ideaID,
-        method: "PATCH",
-        dataType: "JSON",
-        data: {idea: {quality: newQuality}}
-      }).done(function(){
-        $ideaDiv.children(".idea-box-quality").html(qualities[newQuality]);
-        $ideaDiv.children(".idea-box-quality").data("value", newQuality);
-      });
+      updateQuality(ideaID, $ideaDiv, newQuality);
     };
   });
 
@@ -26,16 +17,19 @@ $(document).ready(function() {
 
     if (ideaQuality > 0) {
       var newQuality = ideaQuality - 1;
-
-      $.ajax({
-        url: '/ideas/' + ideaID,
-        method: "PATCH",
-        dataType: "JSON",
-        data: {idea: {quality: newQuality}}
-      }).done(function(){
-        $ideaDiv.children(".idea-box-quality").html(qualities[newQuality]);
-        $ideaDiv.children(".idea-box-quality").data("value", newQuality);
-      });
+      updateQuality(ideaID, $ideaDiv, newQuality);
     };
   });
 });
+
+function updateQuality(ideaID, ideaDiv, newQuality){
+  $.ajax({
+    url: '/ideas/' + ideaID,
+    method: "PATCH",
+    dataType: "JSON",
+    data: {idea: {quality: newQuality}}
+  }).done(function(){
+    ideaDiv.children(".idea-box-quality").html(qualities[newQuality]);
+    ideaDiv.children(".idea-box-quality").data("value", newQuality);
+  });
+};
