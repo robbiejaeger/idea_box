@@ -10,9 +10,9 @@ function trimTextToWord(text){
 };
 
 function renderIdea(title, body, quality){
-  $('#ideas-container').prepend('<div>' +
-                    '<h3>' + title + '</h3>',
-                    '<p>' + body + '</p>',
-                    '<p>' + quality + '</p>',
+  $('#ideas-container').prepend('<div class="idea-box">' +
+                    '<h3>' + title + '</h3>' +
+                    '<p>' + body + '</p>' +
+                    '<p>' + quality + '</p>' +
                     '</div>');
 };

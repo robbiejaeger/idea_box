@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.idea-box {
+  border: 3px solid grey;
+  background-color: #EAF0E6;
+  border-radius: 10px;
+  width: 50%;
+  min-height: 150px;
+  padding: 1px 10px;
+  margin: 15px auto;
+}
+
+#create-form {
+  border: 3px solid white;
+  color: white;
+  background-color: grey;
+  border-radius: 10px;
+  width: 50%;
+  min-height: 75px;
+  padding: 10px;
+  margin: 15px auto;
+}
