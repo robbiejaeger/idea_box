@@ -1,6 +1,8 @@
 var qualities = ["swill", "plausible", "genius"];
 
-var deleteButton = "<button name='button-delete' class='delete-idea'>Delete Idea</button>"
+var deleteButton = "<button name='button-delete' class='delete-idea'>Delete Idea</button>";
+var upvoteButton = "<button name='button-upvote' class='upvote-idea'>Upvote</button>";
+var downvoteButton = "<button name='button-downvote' class='downvote-idea'>Downvote</button>";
 
 function trimTextToWord(text){
   var maxLength = 100;
@@ -18,7 +20,9 @@ function renderIdea(id, title, body, quality){
                     "data-id='" + id + "'>" +
                     "<h3 class='idea-box-title editable' contenteditable='true'>" + title + "</h3>" +
                     "<p class='idea-box-body editable' contenteditable='true'>" + body + "</p>" +
-                    "<p>" + qualities[quality] + "</p>" +
+                    "<p class='idea-box-quality' data-value='" + quality + "'>" + qualities[quality] + "</p>" +
+                    downvoteButton +
+                    upvoteButton +
                     deleteButton +
                     "</div>");
 };
