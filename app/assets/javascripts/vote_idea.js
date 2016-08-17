@@ -4,7 +4,7 @@ $(document).ready(function() {
     var ideaID = $ideaDiv.data("id");
     var ideaQuality = $ideaDiv.children(".idea-box-quality").data("value");
 
-    if (ideaQuality < 2) {
+    if (ideaQuality < (qualities.length - 1)) {
       var newQuality = ideaQuality + 1;
 
       $.ajax({
