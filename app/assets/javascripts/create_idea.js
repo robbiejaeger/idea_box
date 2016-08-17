@@ -9,7 +9,6 @@ $(document).ready(function() {
       dataType: "JSON",
       data: {idea: {title: ideaTitle, body: ideaBody}}
     }).done(function(idea){
-      // var trimmedBody = trimTextToWord(ideaBody);
       renderIdea(idea.id, idea.title, idea.body, idea.quality);
 
       $("#idea-title").val("");
