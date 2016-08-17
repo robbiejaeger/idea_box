@@ -46,4 +46,17 @@ describe "Ideas API Controller" do
 
     expect(parsed_response["ideas"].length).to eq(0)
   end
+
+  it "can update an idea" do
+    idea = Idea.create(title: "Idea", body: "Idea body.")
+
+    patch "/ideas/#{idea.id}", params: {id: idea.id, idea: {title: "UPDATED"}}
+    expect(response.status).to eq(204)
+
+    get '/ideas'
+    parsed_response = JSON.parse(response.body)
+
+    expect(parsed_response["ideas"].length).to eq(1)
+    expect(parsed_response["ideas"][0]["title"]).to eq("UPDATED")
+  end
 end
