@@ -5,9 +5,9 @@ $(document).ready(function() {
     dataType: "JSON"
   }).done(function(allIdeas){
     $.each(allIdeas.ideas, function(i, idea) {
-      var trimmedBody = trimTextToWord(idea.body);
+      // var trimmedBody = trimTextToWord(idea.body);
 
-      renderIdea(idea.title, trimmedBody, idea.quality);
+      renderIdea(idea.id, idea.title, idea.body, idea.quality);
     });
   });
 });

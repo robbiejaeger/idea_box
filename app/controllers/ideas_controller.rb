@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    Idea.create(idea_params)
+    @idea = Idea.create(idea_params)
   end
 
   def destroy

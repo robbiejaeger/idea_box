@@ -8,10 +8,13 @@ $(document).ready(function() {
       method: "POST",
       dataType: "JSON",
       data: {idea: {title: ideaTitle, body: ideaBody}}
-    }).done(function(){
-      var trimmedBody = trimTextToWord(ideaBody);
+    }).done(function(idea){
+      // var trimmedBody = trimTextToWord(ideaBody);
+      console.log(idea);
+      renderIdea(idea.id, idea.title, idea.body, idea.quality);
 
-      renderIdea(ideaTitle, trimmedBody, 'swill');
+      $("#idea-title").val("");
+      $("#idea-body").val("");
     });
   });
 });
