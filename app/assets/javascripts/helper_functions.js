@@ -1,4 +1,4 @@
-var deleteButton = '<button name="button-delete" class="">Delete Idea</button>'
+var deleteButton = '<button name="button-delete" class="delete-idea">Delete Idea</button>'
 
 function trimTextToWord(text){
   var maxLength = 100;
@@ -12,7 +12,7 @@ function trimTextToWord(text){
 };
 
 function renderIdea(id, title, body, quality){
-  $('#ideas-container').prepend('<div class="idea-box">' +
+  $('#ideas-container').prepend('<div class="idea-box" data-id=' + id + '>' +
                     '<h3>' + title + '</h3>' +
                     '<p>' + body + '</p>' +
                     '<p>' + quality + '</p>' +

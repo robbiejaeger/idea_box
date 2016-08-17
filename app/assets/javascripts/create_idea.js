@@ -10,7 +10,6 @@ $(document).ready(function() {
       data: {idea: {title: ideaTitle, body: ideaBody}}
     }).done(function(idea){
       // var trimmedBody = trimTextToWord(ideaBody);
-      console.log(idea);
       renderIdea(idea.id, idea.title, idea.body, idea.quality);
 
       $("#idea-title").val("");
