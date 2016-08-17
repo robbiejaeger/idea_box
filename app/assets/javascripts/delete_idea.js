@@ -8,7 +8,7 @@ $(document).ready(function() {
       method: "DELETE",
       dataType: "JSON"
     }).done(function(){
-      $ideaDiv.hide();
+      $ideaDiv.remove();
     });
   });
 });
