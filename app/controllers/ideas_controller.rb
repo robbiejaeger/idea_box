@@ -5,7 +5,11 @@ class IdeasController < ApplicationController
   end
 
   def create
-    Idea.create(idea_params)
+    @idea = Idea.create(idea_params)
+  end
+
+  def destroy
+    Idea.find(params[:id]).destroy
   end
 
   private
