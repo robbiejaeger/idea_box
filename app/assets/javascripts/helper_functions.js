@@ -1,7 +1,5 @@
 var deleteButton = "<button name='button-delete' class='delete-idea'>Delete Idea</button>"
 
-var updateButton = "<button name='button-update' class='update-idea'>Update Idea</button>"
-
 function trimTextToWord(text){
   var maxLength = 100;
 
@@ -16,10 +14,9 @@ function trimTextToWord(text){
 function renderIdea(id, title, body, quality){
   $('#ideas-container').prepend("<div class='idea-box'" +
                     "data-id='" + id + "'>" +
-                    "<h3 class='idea-box-title' contenteditable='true'>" + title + "</h3>" +
-                    "<p class='idea-box-body' contenteditable='true'>" + body + "</p>" +
+                    "<h3 class='idea-box-title editable' contenteditable='true'>" + title + "</h3>" +
+                    "<p class='idea-box-body editable' contenteditable='true'>" + body + "</p>" +
                     "<p>" + quality + "</p>" +
                     deleteButton +
-                    updateButton +
                     "</div>");
 };

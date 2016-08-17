@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#ideas-container").on("click", ".update-idea", function(){
+  $("#ideas-container").on("blur", ".editable", function(){
     var $ideaDiv = $(this).parent();
     var ideaID = $ideaDiv.data("id");
     var ideaTitle = $ideaDiv.children(".idea-box-title").html();
