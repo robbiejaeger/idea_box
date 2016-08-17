@@ -1,3 +1,5 @@
+var qualities = ["swill", "plausible", "genius"];
+
 var deleteButton = "<button name='button-delete' class='delete-idea'>Delete Idea</button>"
 
 function trimTextToWord(text){
@@ -16,7 +18,7 @@ function renderIdea(id, title, body, quality){
                     "data-id='" + id + "'>" +
                     "<h3 class='idea-box-title editable' contenteditable='true'>" + title + "</h3>" +
                     "<p class='idea-box-body editable' contenteditable='true'>" + body + "</p>" +
-                    "<p>" + quality + "</p>" +
+                    "<p>" + qualities[quality] + "</p>" +
                     deleteButton +
                     "</div>");
 };
