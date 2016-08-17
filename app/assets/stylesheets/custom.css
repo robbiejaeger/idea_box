@@ -23,7 +23,18 @@ h1 {
   background-color: grey;
   border-radius: 10px;
   width: 50%;
-  min-height: 75px;
+  min-height: 25px;
+  padding: 10px;
+  margin: 15px auto;
+}
+
+#filter-form {
+  border: 3px solid white;
+  color: white;
+  background-color: grey;
+  border-radius: 10px;
+  width: 50%;
+  min-height: 25px;
   padding: 10px;
   margin: 15px auto;
 }

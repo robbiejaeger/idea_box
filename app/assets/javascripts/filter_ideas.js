@@ -4,8 +4,8 @@ $(document).ready(function() {
     var query = this.value;
 
     $.each($ideas, function (index, idea) {
-      var ideaText = idea.querySelector(".idea-box-title").innerHTML +
-                ' ' + idea.querySelector(".idea-box-body").innerHTML;
+      var ideaText = $(idea).children(".idea-box-title").html() +
+                ' ' + $(idea).children(".idea-box-body").html();
 
       if (ideaText.toLowerCase().indexOf(query.toLowerCase()) == -1 ) {
         $(idea).hide();

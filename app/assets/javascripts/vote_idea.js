@@ -14,6 +14,7 @@ $(document).ready(function() {
         data: {idea: {quality: newQuality}}
       }).done(function(){
         $ideaDiv.children(".idea-box-quality").html(qualities[newQuality]);
+        $ideaDiv.children(".idea-box-quality").data("value", newQuality);
       });
     };
   });
@@ -33,6 +34,7 @@ $(document).ready(function() {
         data: {idea: {quality: newQuality}}
       }).done(function(){
         $ideaDiv.children(".idea-box-quality").html(qualities[newQuality]);
+        $ideaDiv.children(".idea-box-quality").data("value", newQuality);
       });
     };
   });
