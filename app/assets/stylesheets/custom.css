@@ -17,6 +17,11 @@ h1 {
   margin: 15px auto;
 }
 
+.idea-box-quality {
+  color: #777;
+  font-style: oblique;
+}
+
 #create-form {
   border: 3px solid white;
   color: white;
@@ -37,4 +42,20 @@ h1 {
   min-height: 25px;
   padding: 10px;
   margin: 15px auto;
+}
+
+.delete-idea {
+  float: right;
+}
+
+#idea-title {
+  width: 300px;
+}
+
+#idea-body {
+  width: 500px;
+}
+
+#idea-filter {
+  width: 400px;
 }
