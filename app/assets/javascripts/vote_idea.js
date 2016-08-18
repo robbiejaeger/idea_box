@@ -1,8 +1,14 @@
 $(document).ready(function() {
-  $("#ideas-container").on("click", ".vote-idea", function(){
+  $("#ideas-container").on("mousedown", ".vote-idea", function(){
+    var $ideaDiv = $(this).parent();
+    $ideaDiv.children(".idea-box-quality").css('color', 'black');
+  });
+
+  $("#ideas-container").on("mouseup", ".vote-idea", function(){
     var $ideaDiv = $(this).parent();
     var ideaID = $ideaDiv.data("id");
     var ideaQuality = $ideaDiv.children(".idea-box-quality").data("value");
+    $ideaDiv.children(".idea-box-quality").css('color', '#777');
 
     if ($(this).hasClass("up")) {
       if (ideaQuality < (qualities.length - 1)) {
